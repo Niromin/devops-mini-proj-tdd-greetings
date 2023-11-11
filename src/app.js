@@ -3,27 +3,24 @@ export class Main {
     if (!names || names.length === 0 || names[0] === '') {
       return 'Hello, my friend.'
     }
-    names = names.filter((name) => (name !== null && name !== undefined && name !== ''))
-    const upper = names.filter((name) => (name.toUpperCase() === name))
-    if (names.length === 1) {
-      if (names[0] === names[0].toUpperCase()) {
-        return `HELLO, ${names[0]}.`
+    names = names.filter(
+      (name) => name !== null && name !== undefined && name !== ''
+    )
+    const upper = names.filter((name) => name.toUpperCase() === name)
+    let message = 'Hello, '
+    for (let index = 0; index < names.length; index++) {
+      if (index === 0) {
+        message += names[index]
+      } else if (names.length > 2 && index !== (names.length - 1)) {
+        message += ', ' + names[index]
+      } else {
+        message += ' and ' + names[index]
       }
-      return `Hello, ${names[0]}.`
     }
-
-    if (names.length === 2) {
-      if (names[0] === names[0].toUpperCase() && names[1].toUpperCase()) {
-        return `HELLO, ${names[0]} AND ${names[1]}.`
-      }
-      return `Hello, ${names[0]} and ${names[1]}.`
+    message += '.'
+    if (upper.length === names.length) {
+      return message.toUpperCase()
     }
-
-    const lastName = names.pop()
-    const otherName = names.join(', ')
-    if (upper.length === names.length + 1) {
-      return (`Hello, ${otherName} and ${lastName}.`).toUpperCase()
-    }
-    return `Hello, ${otherName} and ${lastName}.`
+    return message
   }
 }
