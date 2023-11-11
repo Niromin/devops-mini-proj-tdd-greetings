@@ -21,6 +21,16 @@ describe("greet", function () {
     expect(result).toBe("Hello, my friend.");
   });
 
+  it("function greet return hello, my friend when the name is void", function () {
+    // Arrange
+    const main = new Main();
+    // Act
+    const result = main.greet('');
+
+    // Assert
+    expect(result).toBe("Hello, my friend.");
+  });
+
   it("function greet return hello, my friend when the name is undefined", function () {
     // Arrange
     const main = new Main();
