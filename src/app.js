@@ -1,5 +1,8 @@
 export class Main {
   greet (name) {
-    return 'Hello, ' + name
+    if(name === null || name === undefined || name === ''){
+      return 'Hello, my friend.'
+    }
+    return 'Hello, ' + name + '.'
   }
 }
