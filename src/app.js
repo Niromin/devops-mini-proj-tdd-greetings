@@ -15,6 +15,9 @@ export class Main {
         }
         return 'Hello, ' + name + '.'
       } else {
+        if (name === name.toUpperCase() && nameBis === nameBis.toUpperCase()) {
+          return 'HELLO, ' + name + ' AND ' + nameBis + '.'
+        }
         return 'Hello, ' + name + ' and ' + nameBis + '.'
       }
     }

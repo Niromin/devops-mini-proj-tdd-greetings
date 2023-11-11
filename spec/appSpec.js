@@ -52,7 +52,7 @@ describe('greet', function () {
     expect(result).toBe('HELLO, BOB.')
   })
 
-  it('function greet return 2 name', function () {
+  it('function greet return 2 names', function () {
     // Arrange
     const main = new Main()
     // Act
@@ -60,5 +60,15 @@ describe('greet', function () {
 
     // Assert
     expect(result).toBe('Hello, Bob and Patrick.')
+  })
+
+  it('function greet return 2 names UpperCase', function () {
+    // Arrange
+    const main = new Main()
+    // Act
+    const result = main.greet('BOB', 'PATRICK')
+
+    // Assert
+    expect(result).toBe('HELLO, BOB AND PATRICK.')
   })
 })
