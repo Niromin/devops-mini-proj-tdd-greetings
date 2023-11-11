@@ -6,7 +6,7 @@ describe('greet', function () {
     // Arrange
     const main = new Main()
     // Act
-    const result = main.greet('Bob')
+    const result = main.greet(['Bob'])
 
     // Assert
     expect(result).toBe('Hello, Bob.')
@@ -26,7 +26,7 @@ describe('greet', function () {
     // Arrange
     const main = new Main()
     // Act
-    const result = main.greet('')
+    const result = main.greet([''])
 
     // Assert
     expect(result).toBe('Hello, my friend.')
@@ -46,7 +46,7 @@ describe('greet', function () {
     // Arrange
     const main = new Main()
     // Act
-    const result = main.greet('BOB')
+    const result = main.greet(['BOB'])
 
     // Assert
     expect(result).toBe('HELLO, BOB.')
@@ -56,7 +56,7 @@ describe('greet', function () {
     // Arrange
     const main = new Main()
     // Act
-    const result = main.greet('Bob', 'Patrick')
+    const result = main.greet(['Bob', 'Patrick'])
 
     // Assert
     expect(result).toBe('Hello, Bob and Patrick.')
@@ -66,9 +66,37 @@ describe('greet', function () {
     // Arrange
     const main = new Main()
     // Act
-    const result = main.greet('BOB', 'PATRICK')
+    const result = main.greet(['BOB', 'PATRICK'])
 
     // Assert
     expect(result).toBe('HELLO, BOB AND PATRICK.')
+  })
+  it('function greet return 3 names', function () {
+    // Arrange
+    const main = new Main()
+    // Act
+    const result = main.greet(['Bob', 'Patrick', 'Carlo'])
+
+    // Assert
+    expect(result).toBe('Hello, Bob, Patrick and Carlo.')
+  })
+
+  it('function greet return 3 names case void', function () {
+    // Arrange
+    const main = new Main()
+    // Act
+    const result = main.greet(['Bob', '', 'Carlo', 'Patrick'])
+
+    // Assert
+    expect(result).toBe('Hello, Bob, Carlo and Patrick.')
+  })
+  it('function greet return 3 names upperCase', function () {
+    // Arrange
+    const main = new Main()
+    // Act
+    const result = main.greet(['BOB', '', 'CARLO', 'PATRICK'])
+
+    // Assert
+    expect(result).toBe('HELLO, BOB, CARLO AND PATRICK.')
   })
 })
