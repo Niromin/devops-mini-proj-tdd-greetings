@@ -1,53 +1,64 @@
-import { Main } from "../src/app.js";
+/* eslint-disable no-undef */
+import { Main } from '../src/app.js'
 
-describe("greet", function () {
-  it("demo function greet person", function () {
+describe('greet', function () {
+  it('demo function greet person', function () {
     // Arrange
-    const main = new Main();
+    const main = new Main()
     // Act
-    const result = main.greet("Bob");
+    const result = main.greet('Bob')
 
     // Assert
-    expect(result).toBe("Hello, Bob.");
-  });
+    expect(result).toBe('Hello, Bob.')
+  })
 
-  it("function greet return hello, my friend when the name is null", function () {
+  it('function greet return hello, my friend when the name is null', function () {
     // Arrange
-    const main = new Main();
+    const main = new Main()
     // Act
-    const result = main.greet(null);
+    const result = main.greet(null)
 
     // Assert
-    expect(result).toBe("Hello, my friend.");
-  });
+    expect(result).toBe('Hello, my friend.')
+  })
 
-  it("function greet return hello, my friend when the name is void", function () {
+  it('function greet return hello, my friend when the name is void', function () {
     // Arrange
-    const main = new Main();
+    const main = new Main()
     // Act
-    const result = main.greet('');
+    const result = main.greet('')
 
     // Assert
-    expect(result).toBe("Hello, my friend.");
-  });
+    expect(result).toBe('Hello, my friend.')
+  })
 
-  it("function greet return hello, my friend when the name is undefined", function () {
+  it('function greet return hello, my friend when the name is undefined', function () {
     // Arrange
-    const main = new Main();
+    const main = new Main()
     // Act
-    const result = main.greet(undefined);
+    const result = main.greet(undefined)
 
     // Assert
-    expect(result).toBe("Hello, my friend.");
-  });
+    expect(result).toBe('Hello, my friend.')
+  })
 
-  it("function greet return HELLO, NAME if name is UpperCase", function () {
+  it('function greet return HELLO, NAME if name is UpperCase', function () {
     // Arrange
-    const main = new Main();
+    const main = new Main()
     // Act
-    const result = main.greet('BOB');
+    const result = main.greet('BOB')
 
     // Assert
-    expect(result).toBe("HELLO, BOB.");
-  });
-});
+    expect(result).toBe('HELLO, BOB.')
+  })
+
+  it('function greet return 2 name', function () {
+    // Arrange
+    const main = new Main()
+    // Act
+    const result = main.greet('Bob', 'Patrick')
+
+    // Assert
+    expect(result).toBe('Hello, Bob and Patrick.')
+  })
+})
