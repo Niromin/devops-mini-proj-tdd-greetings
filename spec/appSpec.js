@@ -20,4 +20,14 @@ describe("greet", function () {
     // Assert
     expect(result).toBe("Hello, my friend.");
   });
+
+  it("function greet return hello, my friend when the name is undefined", function () {
+    // Arrange
+    const main = new Main();
+    // Act
+    const result = main.greet(undefined);
+
+    // Assert
+    expect(result).toBe("Hello, my friend.");
+  });
 });
