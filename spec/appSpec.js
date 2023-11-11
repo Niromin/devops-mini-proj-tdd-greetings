@@ -40,4 +40,14 @@ describe("greet", function () {
     // Assert
     expect(result).toBe("Hello, my friend.");
   });
+
+  it("function greet return HELLO, NAME if name is UpperCase", function () {
+    // Arrange
+    const main = new Main();
+    // Act
+    const result = main.greet('BOB');
+
+    // Assert
+    expect(result).toBe("HELLO, BOB.");
+  });
 });
