@@ -1,14 +1,14 @@
 import { Main } from '../src/app.js'
 
-describe('A suite', function () {
-  it('demo function should return 1', function () {
+describe('greet', function () {
+  it('demo function greet person', function () {
     // Arrange
     const main = new Main()
 
     // Act
-    const result = main.demo()
+    const result = main.greet('Bob')
 
     // Assert
-    expect(result).toBe(1)
+    expect(result).toBe('Hello, Bob')
   })
 })
