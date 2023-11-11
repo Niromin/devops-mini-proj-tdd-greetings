@@ -1,19 +1,29 @@
 export class Main {
-  greet (name, nameBis) {
-    if (name === null || name === undefined || name === '') {
+  greet (names) {
+    if (!names || names.length === 0 || names[0] === '') {
       return 'Hello, my friend.'
-    } else {
-      if (nameBis === null || nameBis === undefined || nameBis === '') {
-        if (name === name.toUpperCase()) {
-          return 'HELLO, ' + name + '.'
-        }
-        return 'Hello, ' + name + '.'
-      } else {
-        if (name === name.toUpperCase() && nameBis === nameBis.toUpperCase()) {
-          return 'HELLO, ' + name + ' AND ' + nameBis + '.'
-        }
-        return 'Hello, ' + name + ' and ' + nameBis + '.'
-      }
     }
+    names = names.filter((name) => (name !== null && name !== undefined && name !== ''))
+    const upper = names.filter((name) => (name.toUpperCase() === name))
+    if (names.length === 1) {
+      if (names[0] === names[0].toUpperCase()) {
+        return `HELLO, ${names[0]}.`
+      }
+      return `Hello, ${names[0]}.`
+    }
+
+    if (names.length === 2) {
+      if (names[0] === names[0].toUpperCase() && names[1].toUpperCase()) {
+        return `HELLO, ${names[0]} AND ${names[1]}.`
+      }
+      return `Hello, ${names[0]} and ${names[1]}.`
+    }
+
+    const lastName = names.pop()
+    const otherName = names.join(', ')
+    if (upper.length === names.length + 1) {
+      return (`Hello, ${otherName} and ${lastName}.`).toUpperCase()
+    }
+    return `Hello, ${otherName} and ${lastName}.`
   }
 }
