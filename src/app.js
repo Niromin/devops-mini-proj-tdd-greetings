@@ -1,5 +1,5 @@
 export class Main {
-    demo(){
-        return 1;
-    }
+  demo () {
+    return 1
+  }
 }

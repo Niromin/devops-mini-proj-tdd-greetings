@@ -1,15 +1,14 @@
-import { Main } from "../src/app.js";
+import { Main } from '../src/app.js'
 
-describe("A suite", function(){
-    it ("demo function should return 1", function(){
+describe('A suite', function () {
+  it('demo function should return 1', function () {
+    // Arrange
+    const main = new Main()
 
-        // Arrange
-        let main = new Main();
+    // Act
+    const result = main.demo()
 
-        // Act
-        let result = main.demo();
-
-        // Assert
-        expect(result).toBe(1);
-    })
+    // Assert
+    expect(result).toBe(1)
+  })
 })
