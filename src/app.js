@@ -6,21 +6,49 @@ export class Main {
     names = names.filter(
       (name) => name !== null && name !== undefined && name !== ''
     )
+
     const upper = names.filter((name) => name.toUpperCase() === name)
-    let message = 'Hello, '
-    for (let index = 0; index < names.length; index++) {
-      if (index === 0) {
-        message += names[index]
-      } else if (names.length > 2 && index !== (names.length - 1)) {
-        message += ', ' + names[index]
-      } else {
-        message += ' and ' + names[index]
-      }
+    const normal = names.filter((name) => name.toUpperCase() !== name)
+    
+    
+    let message
+    let messageNormal = 'Hello, '
+    let messageUpper = 'HELLO, '
+    if (normal.length > 0){
+        for (let index = 0; index < normal.length; index++) {
+            if (index === 0) {
+              messageNormal += normal[index]
+            } else if (normal.length > 2 && index !== (normal.length - 1)) {
+              messageNormal += ', ' + normal[index]
+            } else {
+              messageNormal += ' and ' + normal[index]
+            }
+          }
+          messageNormal += '.'
     }
-    message += '.'
-    if (upper.length === names.length) {
-      return message.toUpperCase()
+    
+    if (upper.length > 0){
+        for (let index = 0; index < upper.length; index++) {
+            if (index === 0) {
+                messageUpper += upper[index]
+            } else if (upper.length > 2 && index !== (upper.length - 1)) {
+                messageUpper += ', ' + upper[index]
+            } else {
+                messageUpper += ' AND ' + upper[index]
+            }
+        }
+        messageUpper += '!'
     }
+    if (normal.length > 0){
+        message = messageNormal
+    }
+    if (upper.length > 0){
+        message = messageUpper
+    }
+    if (normal.length > 0 && upper.length > 0){
+        message = messageNormal + ' AND ' + messageUpper
+    }
+    
     return message
   }
 }
