@@ -2,45 +2,38 @@
 import { Main } from '../src/app.js'
 
 describe('greet', function () {
-  it('demo function greet person', function () {
-    // Arrange
-    const main = new Main()
+  // Arrange
+  const main = new Main()
+
+  it('function greet person', function () {
     // Act
     const result = main.greet(['Bob'])
     // Assert
     expect(result).toBe('Hello, Bob.')
   })
 
-  it('function greet return hello, my friend when the name is null', function () {
-    // Arrange
-    const main = new Main()
+  it('function greet when name is NULL', function () {
     // Act
     const result = main.greet(null)
     // Assert
     expect(result).toBe('Hello, my friend.')
   })
 
-  it('function greet return hello, my friend when the name is void', function () {
-    // Arrange
-    const main = new Main()
+  it('function greet when name is void', function () {
     // Act
     const result = main.greet([''])
     // Assert
     expect(result).toBe('Hello, my friend.')
   })
 
-  it('function greet return hello, my friend when the name is undefined', function () {
-    // Arrange
-    const main = new Main()
+  it('function greet when name is undefined', function () {
     // Act
     const result = main.greet(undefined)
     // Assert
     expect(result).toBe('Hello, my friend.')
   })
 
-  it('function greet return HELLO, NAME if name is UpperCase', function () {
-    // Arrange
-    const main = new Main()
+  it('function greet when name is in upperCase', function () {
     // Act
     const result = main.greet(['BOB'])
 
@@ -48,9 +41,7 @@ describe('greet', function () {
     expect(result).toBe('HELLO, BOB!')
   })
 
-  it('function greet return 2 names', function () {
-    // Arrange
-    const main = new Main()
+  it('function greet when there is 2 names', function () {
     // Act
     const result = main.greet(['Bob', 'Patrick'])
 
@@ -58,45 +49,35 @@ describe('greet', function () {
     expect(result).toBe('Hello, Bob and Patrick.')
   })
 
-  it('function greet return 2 names UpperCase', function () {
-    // Arrange
-    const main = new Main()
+  it('function greet when there is 2 names in UpperCase', function () {
     // Act
     const result = main.greet(['BOB', 'PATRICK'])
     // Assert
     expect(result).toBe('HELLO, BOB AND PATRICK!')
   })
 
-  it('function greet return 3 names', function () {
-    // Arrange
-    const main = new Main()
+  it('function greet when there is more than 2 names', function () {
     // Act
     const result = main.greet(['Bob', 'Patrick', 'Carlo'])
     // Assert
     expect(result).toBe('Hello, Bob, Patrick and Carlo.')
   })
 
-  it('function greet return 3 names case void', function () {
-    // Arrange
-    const main = new Main()
+  it('function greet when there is more than 2 names and an void name', function () {
     // Act
     const result = main.greet(['Bob', '', 'Carlo', 'Patrick'])
     // Assert
     expect(result).toBe('Hello, Bob, Carlo and Patrick.')
   })
 
-  it('function greet return 3 names upperCase', function () {
-    // Arrange
-    const main = new Main()
+  it('function greet when there is more than 2 names in upperCase', function () {
     // Act
     const result = main.greet(['BOB', 'CARLO', 'PATRICK'])
     // Assert
     expect(result).toBe('HELLO, BOB, CARLO AND PATRICK!')
   })
 
-  it('function greet return 3 names: 2 normal and 1 upperCase', function () {
-    // Arrange
-    const main = new Main()
+  it('function greet when there are 3 names: 2 normal and 1 upperCase', function () {
     // Act
     const result = main.greet(['Bob', 'Carlo', 'PATRICK'])
     // Assert
@@ -104,26 +85,20 @@ describe('greet', function () {
   })
 
   it('function greet return 3 names: 2 normal and 1 upperCase with void', function () {
-    // Arrange
-    const main = new Main()
     // Act
     const result = main.greet(['Bob', 'Carlo', 'PATRICK', ''])
     // Assert
     expect(result).toBe('Hello, Bob and Carlo. AND HELLO, PATRICK!')
   })
 
-  it('function greet return in french', function () {
-    // Arrange
-    const main = new Main()
+  it('function greet when selected language is in french', function () {
     // Act
     const result = main.greet(['Bob', 'Carlo', 'PATRICK', '', 'fr'])
     // Assert
     expect(result).toBe('Bonjour, Bob et Carlo. ET BONJOUR, PATRICK!')
   })
 
-  it('function greet return Bonjour, mon ami if ["fr"]', function () {
-    // Arrange
-    const main = new Main()
+  it('function greet when selected language is in french with no names', function () {
     // Act
     const result = main.greet(['fr'])
     // Assert
