@@ -111,4 +111,22 @@ describe('greet', function () {
     // Assert
     expect(result).toBe('Hello, Bob and Carlo. AND HELLO, PATRICK!')
   })
+
+  it('function greet return in french', function () {
+    // Arrange
+    const main = new Main()
+    // Act
+    const result = main.greet(['Bob', 'Carlo', 'PATRICK', '', 'fr'])
+    // Assert
+    expect(result).toBe('Bonjour, Bob et Carlo. ET BONJOUR, PATRICK!')
+  })
+
+  it('function greet return Bonjour, mon ami if ["fr"]', function () {
+    // Arrange
+    const main = new Main()
+    // Act
+    const result = main.greet(['fr'])
+    // Assert
+    expect(result).toBe('Bonjour, mon ami.')
+  })
 })
