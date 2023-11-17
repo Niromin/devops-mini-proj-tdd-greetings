@@ -27,7 +27,7 @@ export class Main {
     let messageNormal
     let messageUpper
 
-    const messageNormalLangue = {
+    const messageNormalLanguage = {
       fr: 'Bonjour, ',
       en: 'Hello, ',
       nl: 'Hallo, '
@@ -42,16 +42,16 @@ export class Main {
     const andLanguague = {
       fr: 'et',
       en: 'and',
-      nl: 'end, '
+      nl: 'en, '
     }
 
     const andUpperLanguage = {
       fr: 'ET',
       en: 'AND',
-      nl: 'END'
+      nl: 'EN'
     }
 
-    messageNormal = messageNormalLangue[language]
+    messageNormal = messageNormalLanguage[language]
     messageUpper = messageUpperLanguage[language]
     const and = andLanguague[language]
     const andUpper = andUpperLanguage[language]
